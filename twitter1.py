@@ -5,7 +5,7 @@ from urllib2 import urlopen
 from BeautifulSoup import BeautifulSoup
 
 # Replace USERNAME with your twitter username
-url = u'https://twitter.com/that_ladka?page=%s'
+url ='https://twitter.com/that_ladka?page=%s'
 tweets_file = open('tweets', 'w')
 
 for x in range(10*10000):
