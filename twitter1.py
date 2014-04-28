@@ -2,7 +2,7 @@
 
 import time
 from urllib2 import urlopen
-from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
 
 # Replace USERNAME with your twitter username
 url ='https://twitter.com/that_ladka?page=%s'
@@ -12,7 +12,7 @@ for x in range(10*10000):
     f = urlopen(url % x)
     soup = BeautifulSoup(f.read())
     f.close()
-    tweets = soup.findAll('span', {'class': 'entry-content'})
+    tweets = soup.findAll('p', class_='ProfileTweet-text')
     if len(tweets) == 0:
         break
     [tweets_file.write(x.renderContents() + '\n') for x in tweets]
